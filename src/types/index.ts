@@ -1,24 +1,24 @@
 export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  category: string;
-  rating: number;
-  stock: number;
+  id: string
+  name: string
+  description: string
+  price: number
+  image: string
+  category: string
+  rating: number
+  stock: number
 }
 
 export interface CartItem {
-  product: Product;
-  quantity: number;
+  product: Product
+  quantity: number
 }
 
 export interface CartContextType {
-  items: CartItem[];
-  addItem: (product: Product, quantity: number) => void;
-  removeItem: (productId: string) => void;
-  updateQuantity: (productId: string, quantity: number) => void;
-  clearCart: () => void;
-  total: number;
+  items: CartItem[]
+  addItem: (product: Product) => void
+  removeItem: (productId: string) => void
+  updateQuantity: (productId: string, quantity: number) => void
+  clearCart: () => void
+  total: number
 }
