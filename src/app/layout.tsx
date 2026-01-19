@@ -1,9 +1,13 @@
-import './globals.css'
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import { CartProvider } from '@/components/CartProvider'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'VR/AR E-Commerce - Site genere par IA',
-  description: 'Site e-commerce specialise en realite virtuelle et augmentee, genere automatiquement par un systeme multi-agents IA',
+  title: 'Boutique High-Tech et Gadgets Innovants',
+  description: 'Decouvrez notre selection de produits de qualite',
 }
 
 export default function RootLayout({
@@ -13,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className="min-h-screen bg-gray-100">{children}</body>
+      <body className={inter.className}>
+        <CartProvider>
+          {children}
+        </CartProvider>
+      </body>
     </html>
   )
 }
